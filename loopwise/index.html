@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loopwise: AI Subscription Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/react-image-crop/dist/ReactCrop.css" />
+    <style>
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      html {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#0B5FFF',
+                '50': '#E7F0FF',
+                '100': '#D0E0FF',
+                '200': '#A7C3FF',
+                '300': '#7EAAFF',
+                '400': '#5591FF',
+                '500': '#2D78FF',
+                '600': '#0B5FFF',
+                '700': '#004AD8',
+                '800': '#0037A3',
+                '900': '#00256E'
+              },
+              slate: {
+                '50': '#f8fafc',
+                '100': '#f1f5f9',
+                '200': '#e2e8f0',
+                '300': '#cbd5e1',
+                '400': '#94a3b8',
+                '500': '#64748b',
+                '600': '#475569',
+                '700': '#334155',
+                '800': '#1e293b',
+                '900': '#0f172a',
+                '950': '#020617'
+              },
+              gray: { // Kept for compatibility if needed, but slate is preferred
+                '50': '#F9FAFB',
+                '100': '#F3F4F6',
+                '200': '#E5E7EB',
+                '300': '#D1D5DB',
+                '400': '#9CA3AF',
+                '500': '#6B7280',
+                '600': '#4B5563',
+                '700': '#374151',
+                '800': '#1F2937',
+                '900': '#111827',
+                '950': '#0d111c'
+              },
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(1rem)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'scale-in': {
+                '0%': { transform: 'scale(0.95)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              'fly-in-out': {
+                '0%': { transform: 'translateX(-150%) rotate(-45deg)', opacity: 0 },
+                '20%': { transform: 'translateX(0) rotate(-45deg)', opacity: 1 },
+                '80%': { transform: 'translateX(0) rotate(-45deg)', opacity: 1 },
+                '100%': { transform: 'translateX(150%) rotate(-45deg)', opacity: 0 },
+              },
+              'draw-check': {
+                'to': { 'stroke-dashoffset': '0' },
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.4s ease-out forwards',
+              'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+              'scale-in': 'scale-in 0.3s ease-out forwards',
+              'fly-in-out': 'fly-in-out 2s ease-in-out forwards',
+              'draw-check': 'draw-check 0.5s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-image-crop": "https://esm.sh/react-image-crop@11.0.5",
+    "groq-sdk": "https://esm.sh/groq-sdk"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-100 dark:bg-slate-950">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
